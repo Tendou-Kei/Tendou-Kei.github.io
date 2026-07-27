@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="undefined.css">
+    </head>
+    <body>
+        <h1 id="theme" style="text-align: center;font-size: 44px;color: aliceblue;">當前時間：</h1>
+        <script>
+            try{
+            async function* time(){
+                while(1){
+                    yield new Date()
+                    await new Promise((resolve)=>{setTimeout(resolve,991,null)})
+                }
+            }
+
+            async function surprise() {
+                let tag=document.createElement("h1")
+                tag.style.color="rgba(220, 234, 231, 0.949)"
+                tag.style.fontSize="64px"
+                tag.style.textAlign="center"
+                tag.style.fontFamily="'VT323', monospace"
+                tag.id="safe"
+                //document.body.style.backgroundColor="rgb(31, 62, 219)"
+                let replaceTag=document.createElement("h1")
+                replaceTag.style.color="red"
+                replaceTag.style.fontSize="64px"
+                replaceTag.style.textAlign="center"
+                replaceTag.style.textShadow="7px 12px 8px red"
+                replaceTag.style.fontFamily="'Butcherman', cursive"
+
+
+                for await(let i of time()){
+                    
+                    if(i.getHours()>=1){
+                      
+                    tag.innerHTML=i.toString().match(/.+\:\d+/)
+                    replaceTag.style.textDecoration="none"
+                    document.getElementById("theme").style.textDecoration="none"
+                    if(document.body.lastChild!=tag){tag.remove(replaceTag);document.body.append(tag);  document.getElementById("theme").style.color="aliceblue"}else{document.body.append(tag)}
+
+                    }else{
+                    //PUNISHMENT
+                    document.getElementById("theme").style.color="red"
+                    document.getElementById("theme").style.textDecoration="line-through red"
+                    //document.getElementById("theme").style.color="red"
+                    document.body.style.backgroundImage="url(2026428152622.jpg)"
+                    replaceTag.innerHTML=i.toString().match(/.+\:\d+/)
+                    replaceTag.style.textDecoration="double line-through  rgb(142, 2, 2)"
+
+                    if(document.body.lastChild!=replaceTag){replaceTag.remove(tag);document.body.append(replaceTag)}else{document.body.append(replaceTag)}
+                    }
+                }
+            }
+
+            surprise()
+        }catch(error){
+            alert(error)
+        }
+        </script>
+    </body>
+</html>
