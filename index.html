@@ -38,8 +38,10 @@
                     tag.innerHTML=i.toString().match(/.+\:\d+/)
                     replaceTag.style.textDecoration="none"
                     document.getElementById("theme").style.textDecoration="none"
+                    document.body.style.backgroundImage="none"
+//alert(document.body.lastChild!=tag)
                     if(document.body.lastChild!=tag){replaceTag.remove();document.body.append(tag);  document.getElementById("theme").style.color="aliceblue"}else{document.body.append(tag)}
-
+//alert(document.body.lastChild.nodeName)
                     }else{
                     //PUNISHMENT
                     document.getElementById("theme").style.color="red"
@@ -50,7 +52,9 @@
                     replaceTag.style.textDecoration="double line-through  rgb(142, 2, 2)"
 
                     if(document.body.lastChild!=replaceTag){tag.remove();document.body.append(replaceTag)}else{document.body.append(replaceTag)}
-                    }
+//alert(document.body.lastChild!=replaceTag)  
+//alert(document.body.lastChild.nodeName)                  
+                }
                 }
             }
 
