@@ -63,5 +63,14 @@
             alert(error)
         }
         </script>
+
+        <script>
+          window.addEventListener("message",receive)
+          function receive(event){
+            //event.source.postMessage
+            alert(event.origin)
+            alert(event.data)
+  }
+</script>
     </body>
 </html>
