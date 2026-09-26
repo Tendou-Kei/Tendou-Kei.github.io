@@ -30,7 +30,25 @@ img{
 
 <h3>Original image:</h3>
 <img src="girl.jpg">
+<script>
+  async function name(url) {
+    try{
+    let response=await fetch(url)
+    //response=await fetch(response)
+    let result=await response.json()
 
+    for(let i in response){
+      document.body.append(i+"："+result[i])
+      document.body.append(document.createElement("br"))
+    }
+  }catch(error){
+    alert(error)
+  }
+  }
+
+  let url=prompt("please input url")
+  name(url)
+</script>
 
 </body>
 </html>
