@@ -45,12 +45,9 @@ img{
       try{
     let response=await fetch(url)
     //response=await fetch(response)
-    let result=await response.json()
-
-    for(let i in response){
-      document.body.append(i+"："+result[i])
-      document.body.append(document.createElement("br"))
-    }}catch(err){
+    let result=await response.text()
+    document.body.append(result)
+    }catch(err){
         alert(err)
       }
   }
