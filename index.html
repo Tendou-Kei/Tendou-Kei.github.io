@@ -16,6 +16,16 @@
 
 }
 
+  #mask2{
+    -webkit-mask-image: url(tachibana.jpg);
+    mask-image: url(tachibana.jpg);
+      webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;  
+  
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  }
+
 img{
   max-width: 300px;
   max-height: 500px;
@@ -27,6 +37,7 @@ img{
 <div>
 <img src="girl.jpg" id="mask1" >
 </div>
+  <img src="girl.jpg" id="mask2">
 
 <h3>Original image:</h3>
 <img src="girl.jpg">
